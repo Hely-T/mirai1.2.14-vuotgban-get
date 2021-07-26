@@ -14,9 +14,9 @@ module.exports.run = async ({ api, event, args, client, utils }) => {
 	if (args.join() == "") {api.sendMessage("Bot hiện đang có  1 Admin Bot Sử dụng 2 acc khác nhau",event.threadID, event.messageID);
 	}
 	if (args[0] == "1") {
-		return api.sendMessage("Admin: Nguyễn Hoàng Anh\nFb : Https://www.facebook.com/DVFB.HMTG2", event.threadID, event.messageID);
+		return api.sendMessage("Admin: Hà Mạc Trường Giang\nFb : Https://www.facebook.com/DVFB.HMTG2", event.threadID, event.messageID);
 	}
 	else if (args[0] == "2") {
-		return api.sendMessage("Admin: Nguyễn Hoàng Anh\nFb : Https://www.facebook.com/DVFB.HMTG2", event.threadID, event.messageID);
+		return api.sendMessage("Admin: Hà Mạc Trường Giang\nFb : Https://www.facebook.com/DVFB.HMTG2", event.threadID, event.messageID);
 	}
 }
