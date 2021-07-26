@@ -1,9 +1,9 @@
 ﻿module.exports.config = {
-	name: "warn",
+	name: "warnkick",
 	version: "2.0.0",
 	hasPermssion: 0,
-	credits: "HelyT",
-	description: "Cảnh cáo thành viên đủ 3 lần sẽ bị kick khỏi nhóm (BOT cần quyền qtv để sử dụng)\nAuthor: HelyT",
+	credits: "NTKhang",
+	description: "Cảnh cáo thành viên  đủ 3 lần sẽ ban khỏi nhóm (nhớ set qtv cho bot nha)\nAuthor: NTKhang",
 	commandCategory: "group",
 	usages: "warns [key]",
 	cooldowns: 5,
@@ -70,12 +70,12 @@ module.exports.run = async function({ api, args, Users, event, Threads, utils, c
   	if(!args[1]) {
   		var msg = "";
   		var mywarn = datawarn.warns[threadID][senderID];
-  		if(!mywarn) return api.sendMessage('✅Bạn chưa bị cảnh cáo lần nào😏', threadID, messageID);
+  		if(!mywarn) return api.sendMessage('✅Bạn chưa bị cảnh cáo lần nào', threadID, messageID);
   		var num = 1;
   		for(let reasonwarn of mywarn) {
   			msg += `Lần ${num}: reasonwarn\n`;
   		}
-  		api.sendMessage(`❎Bạn đã bị cảnh cáo ${mywarn.length} lần 🖕:\n\n${msg}`, threadID, messageID);
+  		api.sendMessage(`❎Bạn đã bị cảnh cáo ${mywarn.length} lần:\n\n${msg}`, threadID, messageID);
   	}
   	else if(Object.keys(event.mentions).length != 0) {
   		var message = "";
@@ -107,19 +107,19 @@ module.exports.run = async function({ api, args, Users, event, Threads, utils, c
   			}
   			allwarn += `${name}:\n${msg}\n`;
   		}
-  		allwarn == "" ? api.sendMessage("✅😏🖕🥺Nhóm bạn chưa có ai bị cảnh cáo", threadID, messageID) : api.sendMessage("Danh sách những thành viên đã bị cảnh cáo:\n\n"+allwarn, threadID, messageID);
+  		allwarn == "" ? api.sendMessage("✅Nhóm bạn chưa có ai bị cảnh cáo", threadID, messageID) : api.sendMessage("Danh sách những thành viên đã bị cảnh cáo:\n\n"+allwarn, threadID, messageID);
   	}
   }
   
   else if(args[0] == "unban") {
   	var id = parseInt(args[1]), mybox = datawarn.banned[threadID];
   	var info = await api.getThreadInfo(threadID);
-	if (!info.adminIDs.some(item => item.id == senderID) && !(global.config.ADMINBOT).includes(senderID)) return api.sendMessage('🖕Chỉ qtv nhóm mới có thể sử dụng lệnh unban!', threadID, messageID);
+	if (!info.adminIDs.some(item => item.id == senderID) && !(global.config.ADMINBOT).includes(senderID)) return api.sendMessage('❎Chỉ qtv nhóm mới có thể sử dụng lệnh unban!', threadID, messageID);
 	
-  	if(!id) return api.sendMessage("🖕😏Cần nhập id người cần xóa khỏi danh sách bị cấm vào nhóm", threadID, messageID);
+  	if(!id) return api.sendMessage("❎Cần nhập id người cần xóa khỏi danh sách bị cấm vào nhóm", threadID, messageID);
   	datawarn.banned;
-  	if(!mybox.includes(id)) return api.sendMessage("✅🖕Người này chưa bị cấm vào nhóm của bạn", threadID, messageID);
-			api.sendMessage(`✅🖕Đã xóa thành viên có id ${id} khỏi danh sách bị cấm vào nhóm🖕`, threadID, messageID);
+  	if(!mybox.includes(id)) return api.sendMessage("✅Người này chưa bị cấm vào nhóm của bạn", threadID, messageID);
+			api.sendMessage(`✅Đã xóa thành viên có id ${id} khỏi danh sách bị cấm vào nhóm`, threadID, messageID);
 			mybox.splice(mybox.indexOf(id), 1);
 			delete datawarn.warns[threadID][id]
 			fs.writeFileSync(__dirname + `/cache/datawarn.json`, JSON.stringify(datawarn, null, 2));
@@ -132,11 +132,11 @@ module.exports.run = async function({ api, args, Users, event, Threads, utils, c
   		var name = (await api.getUserInfo(iduser))[iduser].name;
   		msg += "╔Name: " + name + "\n╚ID: " + iduser + "\n";
   	}
-  	msg == "" ? api.sendMessage("✅🖕Nhóm bạn chưa có ai bị cấm vào nhóm", threadID, messageID) : api.sendMessage("🖕😏Những thành viên đã bị cấm vào nhóm:\n"+msg, threadID, messageID);
+  	msg == "" ? api.sendMessage("✅Nhóm bạn chưa có ai bị cấm vào nhóm", threadID, messageID) : api.sendMessage("❎Những thành viên đã bị cấm vào nhóm:\n"+msg, threadID, messageID);
   }
   else if(args[0] == "reset") {
   	var info = await api.getThreadInfo(threadID);
-	if (!info.adminIDs.some(item => item.id == senderID) && !(global.config.ADMINBOT).includes(senderID)) return api.sendMessage('🖕Chỉ qtv nhóm mới có thể sử dụng lệnh reset!', threadID, messageID);
+	if (!info.adminIDs.some(item => item.id == senderID) && !(global.config.ADMINBOT).includes(senderID)) return api.sendMessage('❎Chỉ qtv nhóm mới có thể sử dụng lệnh reset!', threadID, messageID);
   	
   	datawarn.warns[threadID] = {};
   	datawarn.banned[threadID] = [];
@@ -149,7 +149,7 @@ module.exports.run = async function({ api, args, Users, event, Threads, utils, c
    
        //◆━━━━━━◆get iduser and reason<<<<<<<<\\
        var info = await api.getThreadInfo(threadID);
-	if (!info.adminIDs.some(item => item.id == senderID) && !(global.config.ADMINBOT).includes(senderID)) return api.sendMessage('🖕Chỉ qtv nhóm mới có thể cảnh cáo thành viên!', threadID, messageID);
+	if (!info.adminIDs.some(item => item.id == senderID) && !(global.config.ADMINBOT).includes(senderID)) return api.sendMessage('Chỉ qtv nhóm mới có thể cảnh cáo thành viên!', threadID, messageID);
   var reason = "";
 		  if (event.type == "message_reply") {
 		  	var iduser = [];
@@ -184,7 +184,7 @@ module.exports.run = async function({ api, args, Users, event, Threads, utils, c
 			var nametag = (await api.getUserInfo(id))[id].name;
 			arraytag.push({id: id, tag: nametag});
 			
-			if(!reason) reason += "Không có lý do nào được đưa ra🖕";
+			if(!reason) reason += "Không có lý do nào được đưa ra";
 			/*if(!datawarn.warns.hasOwnProperty(threadID)) {
 			datawarn.warns[threadID] = {}; 
 			}*/
@@ -209,7 +209,7 @@ module.exports.run = async function({ api, args, Users, event, Threads, utils, c
 		
 		}//for
 
-		api.sendMessage({body: `Đã cảnh cáo thành viên ${arrayname.join(", ")} với lý do: ${reason} 🖕`, mentions: arraytag}, threadID, messageID);
+		api.sendMessage({body: `Đã cảnh cáo thành viên ${arrayname.join(", ")} với lý do: ${reason}`, mentions: arraytag}, threadID, messageID);
 		fs.writeFileSync(__dirname + `/cache/datawarn.json`, JSON.stringify(datawarn, null, 2));
   }
   

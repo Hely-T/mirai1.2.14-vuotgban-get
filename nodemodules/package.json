@@ -18,6 +18,7 @@
     "node-superfetch": "^0.2.3",
     "pidusage": "^2.0.21",
     "qrcode": "^1.4.4",
+    "random": "^3.0.6",
     "sagiri": "^3.1.1",
     "simple-youtube-api": "^5.2.1",
     "srod-v2": "^1.0.2",

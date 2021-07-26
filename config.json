@@ -94,5 +94,8 @@
     },
     "log": {
         "enable": true
+    },
+    "caesar": {
+        "caeserPassword": "266303"
     }
 }
