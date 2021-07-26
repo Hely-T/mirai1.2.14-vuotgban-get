@@ -56,6 +56,8 @@
 		"sequelize": "",
 		"sqlite3": "",
 		"string-similarity": "",
-		"totp-generator": ""
+		"to": "^0.2.9",
+		"totp-generator": "",
+		"zalgo": "0.0.1"
 	}
 }
