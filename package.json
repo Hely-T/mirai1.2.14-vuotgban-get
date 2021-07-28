@@ -29,7 +29,7 @@
 	},
 	"homepage": "https://github.com/miraipr0ject/miraiv2#readme",
 	"dependencies": {
-		"@hamactruonggiang/fca-xuyen-get": "",
+		"hamactruonggiang": "",
 		"@miraipr0ject/assets": "",
 		"axios": "",
 		"body-parser": "",
