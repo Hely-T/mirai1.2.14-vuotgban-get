@@ -1,6 +1,6 @@
 module.exports.config = {
 	name: "advice",
-	version: "1.0.1",
+	version: "1.0.2",
 	hasPermssion: 0,
 	credits: "NTKhang",
 	description: "Đưa ra ngẫu nhiên cho bạn 1 lời khuyên",
