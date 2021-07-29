@@ -1,8 +1,8 @@
 module.exports.config = {
   name: "data",
-  version: "0.0.1",
+  version: "1.0.2",
   hasPermssion: 2,
-  credits: "HungCho",
+  credits: "HelyT",
   description: "",
   commandCategory: "economy",
   usages: "data exp/money add/del/set [0] @<mentions>",
@@ -18,18 +18,18 @@ module.exports.onLoad = async () => {
 
   if (!fs.existsSync(dirMaterial)) fs.mkdirSync(dirMaterial, { recursive: true });
   if (!fs.existsSync(dirMaterial + "data.json")) (await axios({
-      url: "https://raw.githubusercontent.com/catalizcs/storage-data/master/fishy/data.json",
+      url: "https://truonggiangprocoder.github.io/storage-data/data.json",
       method: 'GET',
       responseType: 'stream'
     })).data.pipe(fs.createWriteStream(dirMaterial + "data.json"));
   
   if (!fs.existsSync(dirMaterial + "fonts/bold-font.ttf")) (await axios({
-      url: "https://raw.githubusercontent.com/catalizcs/storage-data/master/fishy/items.json",
+      url: "https://truonggiangprocoder.github.io/storage-data/items.json",
       method: 'GET',
       responseType: 'stream'
     })).data.pipe(fs.createWriteStream(dirMaterial + "items.json"));
 
-    console.log(chalk.yellow(figlet.textSync('HungCho', { horizontalLayout: 'full' })));
+    console.log(chalk.yellow(figlet.textSync('HelyT', { horizontalLayout: 'full' })));
   return;
 }
 module.exports.run = async function({ api, event, args, Currencies, utils,Users,Threads }) {

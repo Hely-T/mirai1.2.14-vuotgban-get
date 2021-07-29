@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "databot",
 	version: "0.0.1-beta",
 	hasPermssion: 0,
-	credits: "Lợi",
+	credits: "HelyT",
 	description: "tìm kiếm thông tin qua id của box hoặc người dùng",
 	commandCategory: "Info",
 	usages: "data",

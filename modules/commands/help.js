@@ -3,10 +3,10 @@ module.exports.config = {
 	version: "1.1.2",
 	hasPermssion: 0,
 	credits: "HelyT",
-	description: "fake spermbot VjpPr0",
+	description: "Help giống Spermbot :3",
 	commandCategory: "group",
 	usages: "[lệnh]",
-	cooldowns: 5,
+	cooldowns: 1,
 };
 module.exports.handleEvent = function ({ api, event }) {
 	const { commands } = global.client;
@@ -37,7 +37,7 @@ const command = commands.get((args[0] || "").toLowerCase());
 const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
 if (!command) {
 const command = commands.values();
-var tl = ["hiện tại code này là do HelyT code ở phiên bản 1.1.2","con bot này thông minh hơn bạn","bạn đã biết","tôi không có khả năng hiểu con gái","con bot này giúp bạn hỗ trợ trong việc học?","spam bot tôi sẽ ban bạn khỏi người dùng bot","đừng để tôi cáu nhé!","việc bạn đang làm là vô nghĩa","bạn đã làm tôi cáu😡","tôi yêu bạn vai lon","bạn có yêu tôi không ?","cái gì chưa biết chỉ cần biết là được","con chuột bị ốm uống thuốc chuột thì tại sao con chuột lại chết ?","chảy máu cam nhưng sao màu máu là màu đỏ ?","đây chỉ là sản phẩm fake spermbot?"];
+var tl = ["hiện tại code này là do HelyT code ở phiên bản 1.1.2","con bot này thông minh hơn bạn","bạn đã biết","tôi không có khả năng hiểu con gái","con bot này giúp bạn hỗ trợ trong việc học?","spam bot tôi sẽ ban bạn khỏi người dùng bot","đừng để tôi cáu nhé!","việc bạn đang làm là vô nghĩa","bạn đã làm tôi cáu😡","tôi yêu bạn vai lon","bạn có yêu tôi không ?","cái gì chưa biết chỉ cần biết là được","con chuột bị ốm uống thuốc chuột thì tại sao con chuột lại chết ?","chảy máu cam nhưng sao màu máu là màu đỏ ?","đây chỉ là sản phẩm fake spermbot?","Tôi không có khả năng hiểu được HelyT","Ngày 15 tháng 11 là ngày sinh nhật của HelyT ?","Con bot này giống Spermbot nhưng thật chất chỉ là mod lại ?","Đây là một bản hoàn chỉnh hơn của Mirai V1.","Đây không phải là bot C3C hay KB2A.","228922 là một con số tuyệt vời.","Đây là một lệnh vô dụng","177013 là một con số tuyệt vời","Đã từng có 600+ code JAV ở phiên bản đầu tiên của SpermBot","Ngôn ngữ của HelyT là ngôn ngữ của chúa","Nếu bạn gặp 1 người có tên là HelyT hãy tránh xa người đó càng nhiều càng tốt. Nếu không cả gia phả nhà người đó sẽ ám bạn suốt đời, con cháu bạn sẽ bị ám bởi cái tên HelyT","Đây là con bot tự viết code cho chính nó","7749 là con số đẹp cho tình yêu","bạn có yêu tôi không ?","bạn rất ngu"];
 var tle = tl[Math.floor(Math.random() * tl.length)];
 var lon = `[Bạn có biết?]: ${tle}.`;
 return api.sendMessage(lon, event.threadID, event.messageID);

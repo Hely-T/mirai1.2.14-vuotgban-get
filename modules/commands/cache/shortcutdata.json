@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "threadID": "3678593095603716",
+        "shortcuts": [
+            {
+                "id": "nkZauivDIJ",
+                "input": ".",
+                "output": "@Trần Đức Toản"
+            },
+            {
+                "id": "yeNHNHVYJS",
+                "input": "@Đỗ Thu Trà",
+                "output": "@Đỗ Thu Trà"
+            }
+        ]
+    }
+]

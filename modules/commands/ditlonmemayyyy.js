@@ -16,7 +16,7 @@ module.exports.handleEvent = async ({ event, api, Currencies, Users, args, utils
 const fs = require("fs");
 var msg = {
     body: `Alo Alo đang ở đâu vậy!?`,
-    attachment: fs.createReadStream(__dirname + `/noprefix/abalatrap.mp3`)
+    attachment: fs.createReadStream(__dirname + `/cache/abalatrap.mp3`)
 }
 if (event.body.toLowerCase() == "abala trap" || (event.body.toLowerCase() == "Abala trap")) {
         return api.sendMessage(msg, event.threadID, event.messageID);
