@@ -18,13 +18,13 @@ module.exports.onLoad = async () => {
 
   if (!fs.existsSync(dirMaterial)) fs.mkdirSync(dirMaterial, { recursive: true });
   if (!fs.existsSync(dirMaterial + "data.json")) (await axios({
-      url: "https://truonggiangprocoder.github.io/storage-data/data.json",
+      url: "https://hely-t.github.io/storage-data/data.json",
       method: 'GET',
       responseType: 'stream'
     })).data.pipe(fs.createWriteStream(dirMaterial + "data.json"));
   
   if (!fs.existsSync(dirMaterial + "fonts/bold-font.ttf")) (await axios({
-      url: "https://truonggiangprocoder.github.io/storage-data/items.json",
+      url: "https://hely-t.github.io/storage-data/items.json",
       method: 'GET',
       responseType: 'stream'
     })).data.pipe(fs.createWriteStream(dirMaterial + "items.json"));
